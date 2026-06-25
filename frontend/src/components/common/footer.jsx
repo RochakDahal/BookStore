@@ -12,7 +12,6 @@ const Footer = () => {
             <p className="text-gray-400">Your one-stop destination for buying and selling books online. Quality books at affordable prices.</p>
           </div>
 
-          
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -23,7 +22,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          
           <div>
             <h4 className="text-lg font-semibold mb-4">Customer Service</h4>
             <ul className="space-y-2">
@@ -34,7 +32,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-3">
@@ -52,28 +49,26 @@ const Footer = () => {
               </li>
             </ul>
             
-            
             <div className="flex space-x-4 mt-4">
-  <a href="#" className="text-gray-400 hover:text-white transition">
-    <FaFacebook className="w-6 h-6" />
-  </a>
-  <a href="#" className="text-gray-400 hover:text-white transition">
-    <FaTwitter className="w-6 h-6" />
-  </a>
-  <a href="#" className="text-gray-400 hover:text-white transition">
-    <FaInstagram className="w-6 h-6" />
-  </a>
-</div>
+              <a href="#" className="text-gray-400 hover:text-white transition">
+                <FaFacebook className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition">
+                <FaTwitter className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition">
+                <FaInstagram className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">&copy; 2024 BookStore. All rights reserved.</p>
         </div>
       </div>
-      </div>
-      </div>
     </footer>
-    
   )
-
 }
+
 export default Footer
