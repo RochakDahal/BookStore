@@ -52,7 +52,7 @@ const Login = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow-xl rounded-2xl sm:px-10">
-          {/* Error Message */}
+         
           {error && (
             <div className="mb-4 bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
               {error}
@@ -60,7 +60,7 @@ const Login = () => {
           )}
 
           <form className="space-y-6" onSubmit={handleSubmit}>
-            {/* Email Field */}
+            
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email address
@@ -83,7 +83,7 @@ const Login = () => {
               </div>
             </div>
 
-            {/* Password Field */}
+           
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Password
