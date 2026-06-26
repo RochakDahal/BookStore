@@ -29,7 +29,7 @@ const Register = () => {
     e.preventDefault();
     setError('');
 
-    // Client-side validation
+    
     if (formData.password !== formData.confirmPassword) {
       return setError('Passwords do not match');
     }
@@ -67,7 +67,7 @@ const Register = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-2xl">
         <div className="bg-white py-8 px-4 shadow-xl rounded-2xl sm:px-10">
-          {/* Error Message */}
+          
           {error && (
             <div className="mb-4 bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm text-center">
               {error}
@@ -76,7 +76,7 @@ const Register = () => {
 
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* First Name */}
+           
               <div className="relative">
                 <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
                   First Name
@@ -96,7 +96,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Last Name */}
+           
               <div className="relative">
                 <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
                   Last Name
@@ -116,7 +116,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Email */}
+         
               <div className="relative">
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Email
@@ -136,7 +136,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Username */}
+           
               <div className="relative">
                 <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
                   Username
@@ -156,7 +156,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Phone */}
+          
               <div className="relative">
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                   Phone Number
@@ -176,7 +176,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Gender */}
+            
               <div className="relative">
                 <label htmlFor="gender" className="block text-sm font-medium text-gray-700 mb-1">
                   Gender
@@ -196,7 +196,7 @@ const Register = () => {
                 </select>
               </div>
 
-              {/* Address - Full Width */}
+            
               <div className="relative md:col-span-2">
                 <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
                   Address
@@ -216,7 +216,6 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Password */}
               <div className="relative">
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                   Password
@@ -236,7 +235,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Confirm Password */}
+              
               <div className="relative">
                 <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
                   Confirm Password
@@ -264,7 +263,7 @@ const Register = () => {
               </div>
             </div>
 
-            {/* Submit Button */}
+           
             <div>
               <button
                 type="submit"
@@ -286,7 +285,7 @@ const Register = () => {
             </div>
           </form>
 
-          {/* Login Link */}
+         
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               Already have an account?{' '}
