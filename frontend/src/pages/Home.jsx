@@ -8,7 +8,7 @@ const Home = () => {
       title: "The Great Gatsby",
       author: "F. Scott Fitzgerald",
       price: 450,
-      image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400",
+      image: "https://tse3.mm.bing.net/th/id/OIP.r-b4vXnfGGmug7f-1XfUlgHaF4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       rating: 4.8
     },
     {
@@ -16,7 +16,7 @@ const Home = () => {
       title: "To Kill a Mockingbird",
       author: "Harper Lee",
       price: 520,
-      image: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400",
+      image: "https://tse2.mm.bing.net/th/id/OIP.hA532a11C61XjRzlgA0iDgHaGq?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       rating: 4.9
     },
     {
@@ -24,7 +24,7 @@ const Home = () => {
       title: "1984",
       author: "George Orwell",
       price: 480,
-      image: "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=400",
+      image: "https://tse2.mm.bing.net/th/id/OIP.Zb1w5xvONhl2M33SP4_Y4QHaF7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       rating: 4.7
     }
   ];
@@ -149,7 +149,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-blue-500 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
           <p className="mb-8 text-blue-100">Get updates on new arrivals, special offers, and book recommendations.</p>
@@ -157,7 +157,7 @@ const Home = () => {
             <input 
               type="email" 
               placeholder="Enter your email"
-              className="px-6 py-3 rounded-lg text-gray-900 w-full md:w-96"
+              className="px-6 py-3 rounded-lg text-gray-1000 w-full md:w-96"
             />
             <button className="bg-orange-500 px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition">
               Subscribe
