@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, User, Menu, X, LogOut } from 'lucide-react';
+import { BookOpen, Menu, X } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 const Navbar = () => {
@@ -8,172 +8,57 @@ const Navbar = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    navigate('/');
-  };
-
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
+       
+          <Link to="/" className="flex items-center space-x-2">
+            <BookOpen className="w-8 h-8 text-blue-600" />
+            <span className="text-2xl font-bold text-gray-900">BookStore</span>
+          </Link>
+
           
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <span className="text-3xl">📚</span>
-              <span className="text-2xl font-bold text-blue-600">BookStore</span>
-            </Link>
-          </div>
-
-         
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition font-medium">
-              Home
-            </Link>
-            <Link to="/about" className="text-gray-700 hover:text-blue-600 transition font-medium">
-              About
-            </Link>
-            <Link to="/products" className="text-gray-700 hover:text-blue-600 transition font-medium">
-              Products
-            </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition font-medium">
-              Contact
-            </Link>
-
+            <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium transition">Home</Link>
+            <Link to="/about" className="text-gray-700 hover:text-blue-600 font-medium transition">About</Link>
+            <Link to="/products" className="text-gray-700 hover:text-blue-600 font-medium transition">Products</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition">Contact</Link>
             
-            <div className="flex items-center space-x-4">
-              <Link to="/cart" className="relative p-2">
-                <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-blue-600 transition" />
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
-                  0
-                </span>
-              </Link>
-
+            <div className="flex items-center space-x-4 ml-4">
               {user ? (
-                <div className="flex items-center space-x-4">
-                  <Link 
-                    to="/my-orders" 
-                    className="text-gray-700 hover:text-blue-600 font-medium transition"
-                  >
-                    My Orders
-                  </Link>
-                  <div className="flex items-center space-x-2 bg-gray-100 px-3 py-1.5 rounded-full">
-                    <User className="w-4 h-4 text-blue-600" />
-                    <span className="text-sm font-medium text-gray-700">
-                      {user.firstName}
-                    </span>
-                  </div>
-                  <button 
-                    onClick={handleLogout} 
-                    className="flex items-center space-x-1 text-red-600 hover:text-red-700 font-medium transition px-3 py-2"
-                  >
-                    <LogOut className="w-4 h-4" />
-                    <span>Logout</span>
-                  </button>
-                </div>
+                <>
+                  <Link to="/my-orders" className="text-gray-700 hover:text-blue-600 font-medium">My Orders</Link>
+                  <button onClick={logout} className="text-gray-700 hover:text-blue-600 font-medium">Logout</button>
+                </>
               ) : (
-                <div className="flex items-center space-x-3">
-                  <button 
-                    onClick={() => navigate('/login')} 
-                    className="px-5 py-2 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition font-medium"
-                  >
-                    Login
-                  </button>
-                  <button 
-                    onClick={() => navigate('/register')} 
-                    className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium shadow-md"
-                  >
-                    Register
-                  </button>
-                </div>
+                <>
+                  <button onClick={() => navigate('/login')} className="text-gray-700 hover:text-blue-600 font-medium">Login</button>
+                  <button onClick={() => navigate('/register')} className="text-gray-700 hover:text-blue-600 font-medium">Register</button>
+                </>
               )}
             </div>
           </div>
 
-          
-          <div className="md:hidden flex items-center">
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
-              className="text-gray-700 hover:text-blue-600 transition p-2"
-            >
+         
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-  
+        
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-2">
-            <Link 
-              to="/" 
-              className="block py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-            <Link 
-              to="/about" 
-              className="block py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
-            <Link 
-              to="/products" 
-              className="block py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
-              onClick={() => setIsOpen(false)}
-            >
-              Products
-            </Link>
-            <Link 
-              to="/contact" 
-              className="block py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
-            <Link 
-              to="/cart" 
-              className="block py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
-              onClick={() => setIsOpen(false)}
-            >
-              Cart
-            </Link>
-            {user ? (
+          <div className="md:hidden pb-4 space-y-2 bg-white border-t border-gray-100">
+            <Link to="/" className="block py-2 px-4 text-gray-700 hover:bg-gray-50">Home</Link>
+            <Link to="/about" className="block py-2 px-4 text-gray-700 hover:bg-gray-50">About</Link>
+            <Link to="/products" className="block py-2 px-4 text-gray-700 hover:bg-gray-50">Products</Link>
+            <Link to="/contact" className="block py-2 px-4 text-gray-700 hover:bg-gray-50">Contact</Link>
+            {!user && (
               <>
-                <Link 
-                  to="/my-orders" 
-                  className="block py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
-                  onClick={() => setIsOpen(false)}
-                >
-                  My Orders
-                </Link>
-                <button 
-                  onClick={() => {
-                    handleLogout();
-                    setIsOpen(false);
-                  }} 
-                  className="block w-full text-left py-2 px-4 text-red-600 hover:bg-red-50 rounded"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
-              <>
-                <Link 
-                  to="/login" 
-                  className="block py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Login
-                </Link>
-                <Link 
-                  to="/register" 
-                  className="block py-2 px-4 text-blue-600 font-semibold hover:bg-blue-50 rounded"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Register
-                </Link>
+                <Link to="/login" className="block py-2 px-4 text-gray-700 hover:bg-gray-50">Login</Link>
+                <Link to="/register" className="block py-2 px-4 text-gray-700 hover:bg-gray-50">Register</Link>
               </>
             )}
           </div>
