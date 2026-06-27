@@ -8,19 +8,14 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#2563eb',
-          hover: '#1d4ed8',
-          light: '#3b82f6'
-        },
-        secondary: {
-          DEFAULT: '#1e40af',
-          hover: '#1e3a8a'
-        },
-        accent: {
-          DEFAULT: '#f97316',
-          hover: '#ea580c'
+          DEFAULT: '#0ea5e9', // sky-500
+          hover: '#0284c7',   // sky-600
+          light: '#e0f2fe',   // sky-100
         }
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      }
     },
   },
   plugins: [],
